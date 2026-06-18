@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/Button";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { id: 1, href: "#about", label: "About" },
@@ -21,6 +22,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOper] = useState(false);
   return (
     <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
       <nav className="container mx-auto px-6 flex items-center justify-between">
@@ -34,7 +36,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop navbar */}
-        <div className="flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1">
           <div className="flex items-center glass rounded-full px-2 py-1 gap-1">
             {navLinks.map((link, id) => (
               <a
@@ -48,8 +50,35 @@ const Navbar = () => {
           </div>
         </div>
         {/* CTA Button */}
-        <Button size="sm">Contact Me</Button>
+        <div className="hidden md:block">
+          <Button size="sm">Contact Me</Button>
+        </div>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden p-2 text-foreground cursor-pointer"
+          onClick={() => setIsMobileMenuOper(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden glass-strong animate-fade-in">
+          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            {navLinks.map((link, id) => (
+              <a
+                key={id}
+                href={link.href}
+                className="text-lg text-mute-foreground hover:text-foreground py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+            <Button size="sm">Contact Me</Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
