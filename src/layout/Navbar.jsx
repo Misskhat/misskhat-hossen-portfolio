@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 
 const navLinks = [
   { id: 1, href: "#about", label: "About" },
@@ -46,6 +47,8 @@ const Navbar = () => {
             ))}
           </div>
         </div>
+        {/* CTA Button */}
+        <Button size="sm">Contact Me</Button>
       </nav>
     </header>
   );
