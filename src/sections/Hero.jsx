@@ -1,6 +1,9 @@
 import { ArrowRight, Download } from "lucide-react";
 import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { TbBrandGithub } from "react-icons/tb";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Hero = () => {
   return (
@@ -56,7 +59,6 @@ const Hero = () => {
                 in MERN stack and now exploring Nest.js, PostgresSQL and
                 Supabase. I build scalable,performant web application that users
                 love.
-                <span>Misskhat</span>
               </p>
             </div>
             {/* CTA Button */}
@@ -72,9 +74,35 @@ const Hero = () => {
                 Download CV
               </AnimatedBorderButton>
             </div>
+            {/* Social Links */}
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <div className=" text-mute-foreground flex items-center justify-center gap-4">
+                <p>Follow me:</p>
+                <div className="flex items-center justify-center gap-4">
+                  <a
+                    href="https://github.com/Misskhat"
+                    className="p-2 rounded-full glass  hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                  >
+                    <TbBrandGithub className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/md-misskhat-hossen"
+                    className="p-2 rounded-full glass  hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                  >
+                    <AiOutlineLinkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://x.com/MisskhatHossen"
+                    className="p-2 rounded-full glass  hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                  >
+                    <FaXTwitter className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          {/* Right column - profile image */}
         </div>
+        {/* Right column - profile image */}
       </div>
     </section>
   );
