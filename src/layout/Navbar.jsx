@@ -22,7 +22,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOper] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const Navbar = () => {
         {/* Mobile menu button */}
         <button
           className="md:hidden p-2 text-foreground cursor-pointer"
-          onClick={() => setIsMobileMenuOper(!isMobileMenuOpen)}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -84,12 +84,18 @@ const Navbar = () => {
               <a
                 key={id}
                 href={link.href}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-lg text-mute-foreground hover:text-foreground py-2"
               >
                 {link.label}
               </a>
             ))}
-            <Button size="sm">Contact Me</Button>
+            <Button
+              size="sm"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              Contact Me
+            </Button>
           </div>
         </div>
       )}
