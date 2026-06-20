@@ -1,4 +1,6 @@
-import React from "react";
+import { ArrowRight, Download } from "lucide-react";
+import Button from "../components/Button";
+import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const Hero = () => {
   return (
@@ -56,6 +58,19 @@ const Hero = () => {
                 love.
                 <span>Misskhat</span>
               </p>
+            </div>
+            {/* CTA Button */}
+            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+              <Button
+                size="lg"
+                className="flex items-center justify-center gap-1.5"
+              >
+                Contact Me <ArrowRight className="w-5 h-5"></ArrowRight>
+              </Button>
+              <AnimatedBorderButton>
+                <Download className="w-5 h-5"></Download>
+                Download CV
+              </AnimatedBorderButton>
             </div>
           </div>
           {/* Right column - profile image */}
