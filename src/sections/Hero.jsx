@@ -1,9 +1,27 @@
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { TbBrandGithub } from "react-icons/tb";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
+
+const skills = [
+  "React",
+  "Next.js",
+  "Node.js",
+  "MongoDB",
+  "Express.js",
+  "Nest.js",
+  "TypeScript",
+  "Firebase",
+  "Tailwind CSS",
+  "Supabase",
+  "Vercel",
+  "Figma",
+  "Git",
+  "GitHub Actions",
+  "Prompt Engineering",
+];
 
 const Hero = () => {
   return (
@@ -35,7 +53,7 @@ const Hero = () => {
       </div>
       {/* Content */}
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-15 items-center">
           {/* Left column - text content */}
           <div className="space-y-8">
             <div className="animate-fade-in">
@@ -101,8 +119,63 @@ const Hero = () => {
               </div>
             </div>
           </div>
+          {/* Right column - profile image */}
+          <div className="relative animate-fade-in animation-delay-300">
+            {/* Profile Image */}
+            <div className="relative max-w-md mx-auto">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse"></div>
+              <div className="relative glass rounded-3xl p-2 glow-border">
+                <img
+                  src="/profile-photo.png"
+                  alt="Misskhat Hossen"
+                  className="w-full aspect-[4/5] object-cover rounded-2xl"
+                />
+                {/* Floating Badge */}
+                <div className="absolute -bottom-4 -right-4 glass  rounded-xl px-4 py-3 animate-float ">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-medium">
+                      Available for work.
+                    </span>
+                  </div>
+                </div>
+                {/* Status Badge */}
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">Ai</div>
+                  <div className="text-sm text-white">
+                    Driven Web Development
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* Right column - profile image */}
+        {/* Skills Section */}
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-mute-foreground mb-6 text-center">
+            Technologies I work with
+          </p>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, index) => (
+                <div key={index} className="shrink-0 px-8 py-4">
+                  <span className="text-xl font-semibold text-mute-foreground/50 hover:text-mute-foreground transition-colors">
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+          <a
+            href="#about"
+            className="flex flex-col items-center gap-2 text-mute-foreground hover:text-primary"
+          >
+            <span className="text-xs uppercase tracking-wider">Scroll</span>
+            <ChevronDown className="w-6 h-6 animate-bounce"></ChevronDown>
+          </a>
+        </div>
       </div>
     </section>
   );
