@@ -81,14 +81,12 @@ const Hero = () => {
             </div>
             {/* CTA Button */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button
-                size="lg"
-                className="flex items-center justify-center gap-1.5"
-              >
-                Contact Me <ArrowRight className="w-5 h-5"></ArrowRight>
+              <Button size="lg" className="flex items-center gap-1.5">
+                <a href="#contact">Contact Me</a>
+                <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton>
-                <Download className="w-5 h-5"></Download>
+                <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
             </div>

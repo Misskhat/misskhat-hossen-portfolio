@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ className = "", size = "default", children }) => {
+const Button = ({ className = "", size = "default", children, ...props }) => {
   const baseClass =
     "relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 flex item-center justify-center focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25";
 
@@ -12,7 +12,11 @@ const Button = ({ className = "", size = "default", children }) => {
 
   const classes = `${baseClass} ${sizeClass[size] || sizeClass.default} ${className}`;
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button className={classes} {...props}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
