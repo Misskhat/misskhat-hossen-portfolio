@@ -48,10 +48,10 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-mute-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
+                I'm a passionate Jr. Web developer exploring and experience
+                crafting digital products that make a difference. My journey
+                started with a curiosity for how things work on the web, and it
+                has evolved into a deep expertise in modern frontend
                 technologies.
               </p>
               <p>
